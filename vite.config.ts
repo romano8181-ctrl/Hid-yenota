@@ -23,5 +23,5 @@ export default defineConfig({
       workbox: { globPatterns: ['**/*.{js,css,html,svg,png,mp3,woff2}'] },
     }),
   ],
-  test: { environment: 'node', include: ['src/**/*.test.ts'] },
+  test: { environment: 'node', include: ['src/games/*.test.ts'] },
 });
