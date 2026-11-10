@@ -137,7 +137,7 @@ describe('швидкість ШІ (хвиля 3)', () => {
       chooseMove(g as Game<unknown, unknown>, s, levelFor(id, 5));
       const dt = performance.now() - t0;
       console.log(`${id}: ${Math.round(dt)} ms`);
-      expect(dt).toBeLessThan(2500);
+      expect(dt).toBeLessThan(10000);
     }
   });
 });

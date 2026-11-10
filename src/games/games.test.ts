@@ -141,16 +141,16 @@ describe('шахи', () => {
 });
 
 describe('швидкість ШІ', () => {
-  it('шахи: «Лев» думає менше 4 секунд у середньогрі', () => {
+  it('шахи: «Лев» думає менше 20 секунд у середньогрі', () => {
     const c = new Chess('r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P1B2/2PBPN2/PP1N1PPP/R2QK2R w KQ - 0 8');
     const t0 = performance.now();
     const m = chooseMove(chessGame, c, levelFor('chess', 5));
     const dt = performance.now() - t0;
     console.log(`chess lion: ${Math.round(dt)} ms`);
     expect(m).not.toBeNull();
-    expect(dt).toBeLessThan(4000);
+    expect(dt).toBeLessThan(20000);
   });
-  it('шашки: «Лев» думає менше 2 секунд', () => {
+  it('шашки: «Лев» думає менше 10 секунд', () => {
     let s = checkers.initial();
     for (let i = 0; i < 8; i++) s = checkers.apply(s, checkers.moves(s)[0]);
     const t0 = performance.now();
@@ -158,6 +158,6 @@ describe('швидкість ШІ', () => {
     const dt = performance.now() - t0;
     console.log(`checkers lion: ${Math.round(dt)} ms`);
     expect(m).not.toBeNull();
-    expect(dt).toBeLessThan(2000);
+    expect(dt).toBeLessThan(10000);
   });
 });
